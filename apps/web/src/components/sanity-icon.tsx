@@ -1,6 +1,7 @@
 import { cn } from "@workspace/ui/lib/utils";
 import type { ComponentProps } from "react";
 import { memo } from "react";
+import React from "react";
 
 interface IconProps extends Omit<ComponentProps<"span">, "src"> {
   icon?:

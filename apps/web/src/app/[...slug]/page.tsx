@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import type { JSX } from "react";
 
 import { PageBuilder } from "@/components/pagebuilder";
 import { client } from "@/lib/sanity/client";
@@ -46,7 +47,7 @@ export default async function SlugPage({
   params,
 }: {
   params: Promise<{ slug: string[] }>;
-}) {
+}): Promise<JSX.Element> {
   const { slug } = await params;
   const slugString = slug.join("/");
   const { data: pageData } = await fetchSlugPageData(slugString);

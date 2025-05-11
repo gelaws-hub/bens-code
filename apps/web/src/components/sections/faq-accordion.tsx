@@ -7,6 +7,7 @@ import {
 import { Badge } from "@workspace/ui/components/badge";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import React from "react";
 
 import type { PagebuilderType } from "@/types";
 

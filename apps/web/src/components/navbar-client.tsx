@@ -27,6 +27,8 @@ import { Menu } from "lucide-react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import type { ComponentType } from "react";
+import React from "react";
 import { useEffect, useMemo, useState } from "react";
 
 import { useIsMobile } from "@/hooks/use-is-mobile";
@@ -105,7 +107,7 @@ function MobileNavbarAccordionColumn({
   );
 }
 
-function MobileNavbar({ navbarData }: { navbarData: QueryNavbarDataResult }) {
+function MobileNavbar({ navbarData }: { navbarData: QueryNavbarDataResult; }) {
   const { logo, siteTitle, columns, buttons } = navbarData ?? {};
   const [isOpen, setIsOpen] = useState(false);
 
@@ -182,7 +184,7 @@ function NavbarColumnLink({
 }: {
   column: Extract<
     NonNullable<NonNullable<QueryNavbarDataResult>["columns"]>[number],
-    { type: "link" }
+    { type: "link"; }
   >;
 }) {
   return (
@@ -215,7 +217,7 @@ export function NavbarColumn({
 }: {
   column: Extract<
     NonNullable<NonNullable<QueryNavbarDataResult>["columns"]>[number],
-    { type: "column" }
+    { type: "column"; }
   >;
 }) {
   const layoutClass = useMemo(
@@ -348,7 +350,9 @@ export function NavbarSkeletonResponsive() {
 }
 
 // Dynamically import the navbar with no SSR to avoid hydration issues
-export const NavbarClient = dynamic(() => Promise.resolve(ClientSideNavbar), {
+export const NavbarClient: ComponentType<{
+  navbarData: QueryNavbarDataResult;
+}> = dynamic(() => Promise.resolve(ClientSideNavbar), {
   ssr: false,
   loading: () => <NavbarSkeletonResponsive />,
 });

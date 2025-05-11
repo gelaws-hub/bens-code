@@ -9,6 +9,7 @@ import {
 } from "@workspace/ui/components/dropdown-menu";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
+import React from "react";
 
 export function ModeToggle() {
   const { setTheme } = useTheme();

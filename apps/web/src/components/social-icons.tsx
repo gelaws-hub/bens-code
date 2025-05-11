@@ -1,3 +1,5 @@
+import React from "react";
+
 export function LinkedinIcon({ className }: { className?: string }) {
   return (
     <svg

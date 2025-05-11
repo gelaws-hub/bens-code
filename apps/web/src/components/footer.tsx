@@ -1,4 +1,5 @@
 import Link from "next/link";
+import React from "react";
 
 import { sanityFetch } from "@/lib/sanity/live";
 import { queryFooterData, queryGlobalSeoSettings } from "@/lib/sanity/query";

@@ -1,4 +1,5 @@
 import { Badge } from "@workspace/ui/components/badge";
+import React from "react";
 
 import type { PagebuilderType } from "@/types";
 

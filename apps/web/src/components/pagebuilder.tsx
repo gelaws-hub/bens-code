@@ -2,6 +2,7 @@
 import { useOptimistic } from "@sanity/visual-editing/react";
 import { createDataAttribute, type SanityDocument } from "next-sanity";
 import type { ComponentType } from "react";
+import React from "react";
 
 import { dataset, projectId, studioUrl } from "@/lib/sanity/api";
 import type { QueryHomePageDataResult } from "@/lib/sanity/sanity.types";

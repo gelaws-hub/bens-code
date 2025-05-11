@@ -1,3 +1,5 @@
+import React from "react";
+
 import { sanityFetch } from "@/lib/sanity/live";
 import { queryGlobalSeoSettings, queryNavbarData } from "@/lib/sanity/query";
 import type {

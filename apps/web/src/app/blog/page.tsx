@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import type { JSX } from "react";
 
 import { BlogCard, BlogHeader, FeaturedBlogCard } from "@/components/blog-card";
 import { PageBuilder } from "@/components/pagebuilder";
@@ -16,7 +17,7 @@ export async function generateMetadata() {
   return await getMetaData(result?.data ?? {});
 }
 
-export default async function BlogIndexPage() {
+export default async function BlogIndexPage(): Promise<JSX.Element> {
   const [res, err] = await fetchBlogPosts();
   if (err || !res?.data) notFound();
 
@@ -68,7 +69,7 @@ export default async function BlogIndexPage() {
 
         {featuredBlogs.length > 0 && (
           <div className="mx-auto mt-8 sm:mt-12 md:mt-16 mb-12 lg:mb-20 grid grid-cols-1 gap-8 md:gap-12">
-            {featuredBlogs.map((blog) => (
+            {featuredBlogs.map((blog: any) => (
               <FeaturedBlogCard key={blog._id} blog={blog} />
             ))}
           </div>
@@ -76,7 +77,7 @@ export default async function BlogIndexPage() {
 
         {remainingBlogs.length > 0 && (
           <div className="grid grid-cols-1 gap-8 md:gap-12 lg:grid-cols-2 mt-8">
-            {remainingBlogs.map((blog) => (
+            {remainingBlogs.map((blog: any) => (
               <BlogCard key={blog._id} blog={blog} />
             ))}
           </div>

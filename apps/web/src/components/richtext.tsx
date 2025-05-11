@@ -5,6 +5,7 @@ import {
   type PortableTextBlock,
   type PortableTextReactComponents,
 } from "next-sanity";
+import React from "react";
 
 import { parseChildrenToSlug } from "@/utils";
 

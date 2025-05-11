@@ -1,6 +1,7 @@
 import { getImageDimensions } from "@sanity/asset-utils";
 import { cn } from "@workspace/ui/lib/utils";
 import Image, { type ImageProps as NextImageProps } from "next/image";
+import React from "react";
 
 import { urlFor } from "@/lib/sanity/client";
 import type { SanityImageProps } from "@/types";
