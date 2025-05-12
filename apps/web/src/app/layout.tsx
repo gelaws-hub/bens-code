@@ -3,6 +3,7 @@ import "@workspace/ui/globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
 import { draftMode } from "next/headers";
 import { VisualEditing } from "next-sanity";
+import NextTopLoader from "nextjs-toploader";
 import type { JSX } from "react";
 import { Suspense } from "react";
 import { preconnect, prefetchDNS } from "react-dom";
@@ -44,6 +45,7 @@ export default async function RootLayout({
           <Suspense fallback={<NavbarSkeleton />}>
             <NavbarServer />
           </Suspense>
+          <NextTopLoader color="#f47ad3" />
           {children}
 
           <Suspense fallback={<FooterSkeleton />}>
