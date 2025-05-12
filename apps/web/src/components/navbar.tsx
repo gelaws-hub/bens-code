@@ -29,7 +29,7 @@ export function Navbar({
 }) {
   const { siteTitle: settingsSiteTitle, logo } = settingsData ?? {};
   return (
-    <section className="py-3 md:border-b">
+    <section className="py-3 md:border-b sticky top-0 z-50 bg-transparent dark:bg-dark-transparent backdrop-blur">
       <div className="container mx-auto px-4 md:px-6">
         <nav className="grid grid-cols-[auto_1fr] items-center gap-4">
           {logo && <Logo alt={settingsSiteTitle} priority image={logo} />}
